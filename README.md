@@ -9,6 +9,7 @@ ezbusLK is a comprehensive web-based platform designed to digitize bus travel ma
 * **Automated Ticketing:** Email notifications and digital ticket generation via PHPMailer.
 * **Feedback System:** Integrated customer reviews to maintain service quality.
 * **Chat Bot:** Integrated customized chat bot to communicate common questions with passengers.
+* **Admin Panel:** Fully featured admin panel to bus owners, bus assistants to manage every master data and functions.
 
 ## 🛠 Technology Stack
 * **Frontend:** HTML5, CSS3 (Custom Grid/Flexbox), JavaScript (Vanilla).
