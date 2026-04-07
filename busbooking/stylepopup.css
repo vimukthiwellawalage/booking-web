@@ -1,0 +1,614 @@
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+  }
+  
+  
+  
+  #popupContainerCategory {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 410px;
+    background-color: var(--skyblue);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+    border-radius: 10px;
+  
+  }
+  
+  #popupContainerCuisine {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 350px;
+    background-color: var(--blue);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+  
+  }
+  
+  #popupContainerDiet {
+  
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 350px;
+    background-color: var(--blue);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+   
+  
+  }
+
+  #popupContainerItem {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: var(--skyblue);
+    box-shadow: 0 0 10px rgba(12, 12, 12, 0.5);
+    z-index: 1002;
+    border-radius: 10px;
+    /* Set a higher z-index than the overlay */
+    
+  }
+  
+  
+  #popupContent-item {
+  
+    color: var(--white);
+  
+  }
+  
+  
+  .popup-header-item {
+    display: flex;
+    justify-content: space-between;
+  
+
+    padding: 10px;
+  }
+  
+  
+  .popup-content-item {
+    padding: 10px;
+    margin-top: 5px;
+
+
+  
+  }
+
+  .popup-footer {
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .add-category-form-item {}
+  
+  .inputs-popup-item {
+  
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 50px 20px 50px;
+ 
+  }
+  
+  
+  
+  .inputs-popup-item-box1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  align-items: center;
+    
+  
+  
+  }
+  
+  .inputs-popup-item-box2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  
+  
+  
+  
+  }
+  
+  
+  
+  
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+  
+  
+    padding: 10px;
+    padding-left: 15px;
+  
+  }
+  
+  
+  .bi-x {
+    float: right;
+    font-size: 30px;
+    color: gray;
+  
+  }
+  
+  .form-heading-popup p {
+  
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+  
+  
+  }
+  
+  .popup-content {
+    
+    padding: 20px;
+    color: var(--white);
+  
+  }
+  
+  .add-category-form {
+    
+    
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  
+  .divided-input-popup {
+    margin-top: 8px;
+    width: 250px;
+    height: 35px;
+    padding: 10px;
+    
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+  
+  
+  }
+  
+  .labels-popup {
+    font-family: "Poppins", sans-serif;
+   font-size: 14px;
+    font-style: normal;
+    
+  }
+  
+  
+  
+  .bi-x:hover {
+  
+    cursor: pointer;
+  
+    color: var(--black);
+  
+  }
+  
+
+  
+  .button-popup {
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: var(--skyblue2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 8px 30px ;
+    cursor: pointer;
+    width: 200px;
+  
+  }
+  
+  
+  .button-popup:hover {
+    background-color: gray;
+  }
+  
+  .button-popup-trips {
+    font-size: 16px;
+   
+    background-color: var(--skyblue2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px 25px ;
+    cursor: pointer;
+    width: 200px;
+  
+  }
+  
+  
+  .button-popup-trips:hover {
+    background-color: gray;
+  }
+  
+  
+  .col1-popup-item-stop {
+    display: flex;
+    flex-direction: row;
+    width: 360px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+  
+  
+  
+  
+  }
+
+  .col1-popup-item-form {
+    display: flex;
+    flex-direction: row;
+    width: 360px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+  }
+  
+
+  
+  
+  
+  .average-dropdown-popup-stops {
+    width: 320px;
+    height: 35px;
+    margin-top: 10px;
+    font-size: 15px;
+  
+    border: none;
+  
+  }
+  
+  #stopRemoveButton {
+    background-color: var(--skyblue2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  width: 25px;
+  font-style: normal;
+  padding: 1px 5px;
+  margin-left: 10px ;
+  cursor: pointer;
+  font-size: 13px;
+  }
+  
+  .col1-popup-item-dropdown-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 360px;
+    min-width: 360px;
+    justify-content: space-between;
+    align-items: center;
+  
+  
+  }
+  
+  #addStopButton{
+  
+  background-color: var(--skyblue2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  
+  font-style: normal;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 13px;
+  
+  }
+  
+  
+  #stopPoint {
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  #overlay-2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+  }
+  
+  
+  .form-heading-popup-item p {
+  
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+     font-style: normal;
+   
+    padding-left: 20px;
+    padding-top: 6px;
+  
+  }
+  
+  
+  
+
+  
+  .labels-popup-item {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+     font-style: normal;
+  }
+  
+  .labels-popup-item-trips {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+     font-style: normal;
+  }
+  
+  .col1-popup {
+    margin-bottom: 5px;
+    margin-right: 10px;
+  }
+  
+  .container-trip-stops {
+    width: 360px;
+    display:flex;
+    flex-direction: row;
+  
+  }
+  
+  .labels-popup-item-trip-stops {
+    font-family: "Poppins", sans-serif;
+   font-size: 13px;
+    font-style: normal;
+    width: 150px;
+    
+  }
+  
+  .container-trip-stops {
+    padding-top: 5px;
+    display: flex;
+  }
+  
+  .container-trip-stops-labels {
+    padding: 10px 0px 5px 0px;
+    display: flex;
+  
+  }
+  
+  .labels-popup-item-point-type {
+    font-family: "Poppins", sans-serif;
+   font-size: 14px;
+    font-style: normal;
+  
+  }
+  
+  .labels-popup-item-point-type {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .divided-input-popup-item-trips {
+    margin-top: 8px;
+    width: 360px;
+    height: 33px;
+    padding: 10px;
+  
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none;
+  
+  
+  }
+  
+  .divided-input-popup-file-trips {
+    margin-top: 8px;
+    width: 250px;
+    height: 33px;
+  
+  
+    font-size: 14px;
+    margin-bottom: 5px;
+    border: none;
+  
+  
+  }
+  
+  .average-dropdown-popup-trips {
+    width: 360px;
+    height: 33px;
+    margin-top: 5px;
+  
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none;
+  
+  }
+  
+  .textarea-popup-trips {
+    margin-top: 5px;
+    width: 360px;
+    height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none;
+  }
+  
+  .divided-input-popup-item-form {
+    margin-top: 8px;
+    width: 170px;
+    height: 35px;
+    padding: 10px;
+  
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+  }
+  
+  
+  .divided-input-popup-item {
+    margin-top: 8px;
+    width: 360px;
+    height: 35px;
+    padding: 10px;
+  
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+  
+  
+  }
+  
+  
+  .divided-input-popup-item {
+    margin-top: 8px;
+    width: 360px;
+    height: 35px;
+    padding: 10px;
+  
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+  
+  
+  }
+  
+  .divided-input-popup-file {
+    margin-top: 8px;
+    width: 250px;
+    height: 35px;
+  
+  
+    font-size: 15px;
+    margin-bottom: 5px;
+    border: none;
+  
+  
+  }
+  
+  .average-dropdown-popup {
+    width: 360px;
+    height: 35px;
+    margin-top: 5px;
+  
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+  
+  }
+  
+  .textarea-popup {
+    margin-top: 5px;
+    width: 360px;
+    height: 100px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #overlay-edit {
+  display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2001;
+  }
+  
+  
+  
+  #popupContainerCategory-edit {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 350px;
+    background-color: var(--blue);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2002;
+  
+  }
+  
+  
+  #popupContainerItem-edit{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 890px;
+    height: 530px;
+    background-color: var(--blue);
+    box-shadow: 0 0 10px rgba(12, 12, 12, 0.5);
+    z-index: 1002;
+    /* Set a higher z-index than the overlay */
+  
+  }

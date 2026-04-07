@@ -1,0 +1,515 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --offwhite: #edebe6;
+    --black: #000000;
+    --white: #ffffff;
+    --blue: #000b3d;
+    --gray: rgb(115, 114, 114);
+    --skyblue:  #113978;
+    --skyblue2: rgb(13, 136, 188);
+  }
+  
+  
+  body {
+    color: var(--white);
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+
+
+
+.account-main {
+   background-color: var(--skyblue);
+
+  width: 100%;
+  }
+  .account-table{
+    
+  }
+  
+
+.table-container-item {
+
+  width: 100%;
+
+  margin-top: 10px;
+  margin-bottom: 15px;
+  overflow: auto;
+  max-height: 370px;
+
+
+
+}
+
+
+.filter {
+  margin-left: 7.5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 14px;
+    height: 30px;
+    background-color: var(--black);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    
+    padding: 5px 10px;
+    cursor: pointer;
+    width: auto;
+  
+  
+  
+  }
+  
+  .filter:hover {
+    background-color: #333333;
+  }
+  
+
+.table-box tr {
+  text-align: center;
+  
+
+}
+
+#update {
+  font-size: 16px;
+
+  background-color: var(--skyblue2);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 4px 9px;
+  cursor: pointer;
+
+
+}
+
+#update:hover {
+  background-color: rgb(7, 74, 105);
+}
+
+.table-box th {
+  padding: 4px;
+  width: 30px;
+  color: var(--white);
+  background-color: rgba(128, 128, 128, 0.954);
+  font-style: normal;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.table-box td {
+  padding: 7px;
+  background-color: rgba(166, 166, 166, 0.632);
+  color: #000000;
+  font-size: 14px;
+  
+}
+
+.table-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+ 
+}
+
+
+.table-section-item {
+
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+  
+  
+  .account-view {
+  
+    display: flex;
+  
+    align-items: baseline;
+
+  
+  }
+  
+  #title-menu {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  
+  .account-container {
+  width: 100%;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  
+  
+  }
+  
+  .account-card {
+  
+    margin-top: 30px;
+    margin-left: 0px;
+  
+    height: auto;
+    width: 100%;
+    color: #e0e0e0;
+    margin-bottom: 60px;
+  
+  }
+  
+  .account-heading {
+  
+    
+    font-size: 28px;
+    letter-spacing: normal;
+    display: flex;
+    justify-content: center;
+  padding-left: 100px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+    align-items: center;
+    width: 100%;
+  
+  
+  
+  }
+  
+  
+  
+  
+  .account-info {
+    display: flex;
+    width: 100%;
+  
+justify-content: center;
+align-items: flex-start;
+  }
+  
+  
+  
+  
+  
+  .account-summary {
+    
+    letter-spacing: normal;
+    font-size: 18px;
+  width: auto;
+    margin-left: 0px;
+  
+  
+  }
+  
+  .account-heading-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-name {
+    
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 0px 25px 5px;
+  }
+  
+  .welcome {
+    
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0px 5px 5px;
+  }
+  
+  .name {
+    
+    font-size: 20px;
+    font-weight: 600;
+  padding-bottom: 8px;
+  }
+  
+  .order-heading {
+    font-size: 20px;
+  
+    padding: 5px 0px 20px 5px;
+  }
+  
+  .account-box {
+    color: var(--skyblue);
+ 
+    width: 280px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: var(--offwhite);
+  }
+  
+  .account-icon-box {
+  
+  
+    /* Arrange items in a column layout */
+  
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  
+    /* Set a specific width for each item */
+    max-width: 600px;
+  
+  }
+  
+  .account-icon-box {
+  
+  
+    /* Arrange items in a column layout */
+  
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  
+    /* Set a specific width for each item */
+    max-width: 600px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  
+  .account-username-box {
+  
+  
+    /* Arrange items in a column layout */
+  
+    margin-bottom: 10px;
+    text-align: center;
+  
+    /* Set a specific width for each item */
+  
+  }
+  
+  
+  
+  .button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  .viewbutton {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: var(--skyblue);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    
+    padding: 10px 10px;
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  .viewbutton:hover {
+    background-color: #333333;
+  }
+  
+  
+  
+  .bi-person-circle {
+    font-size: 80px;
+    color: var(--skyblue);
+  }
+  
+  
+  .form-heading {
+    
+    font-size: 18px;
+  
+    padding: 0px 0px 15px 0px;
+  }
+  
+  .form-heading-2 {
+    
+    font-size: 18px;
+  
+    padding: 25px 0px 25px 0px;
+  }
+  
+  .labels {
+    font-size: 15px;
+  
+  }
+  
+  
+  
+  .account-form {
+  
+    color: var(--white);
+    font-size: 20px;
+    
+    padding: 20px 50px 10px 100px;
+    border-radius: 5px;
+  
+  
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .account-form-details {
+  
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+  }
+  
+  
+  
+  
+  .divided {
+    display: flex;
+    justify-content: first baseline;
+  }
+  
+  .divided-input {
+    margin-top: 5px;
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+   
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+  
+  }
+  
+  .divided-input-checkout {
+    margin-top: 8px;
+    width: 450px;
+    height: 40px;
+    padding: 10px;
+    
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+  }
+
+  .divided-input-account {
+    margin-top: 8px;
+    width: 450px;
+    height: 40px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+  }
+  
+  
+  
+  .dropdown-checkout {
+    width: 450px;
+    height: 40px;
+    margin-top: 5px;
+    
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+  
+  }
+  
+  .save-button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .savechanges {
+    font-size: 22px;
+    margin-top: 10px;
+    background-color: var(--white);
+    color: var(--skyblue);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 10px 40px;
+    cursor: pointer;
+    width: 310px;
+  }
+  
+  .savechanges:hover {
+    background-color: gray;
+  }
+  
+  
+  
+  
+  .errors-box {
+    
+    margin-top: 10px;
+    height: 20px;
+  margin-bottom: 5px;  
+  
+  }
+  
+  .errors {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #correct{
+  
+    color: rgb(8, 211, 46);
+    font-size: 20px;
+  
+  }
+  
+  #error{
+    
+    color: rgb(229, 11, 11);
+    font-size: 20px;
+  
+  }
+  
+  
+  
+  
+  
+  
+  

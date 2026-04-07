@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table Results</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+    
+
+
+    
+</head>
+
+<style media="screen">
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+    :root {
+--offwhite: #edebe6;
+--black: #000000;
+--white: #ffffff;
+--blue: #000b3d;
+--gray: rgb(115, 114, 114);
+--skyblue:  #113978;
+--skyblue2: rgb(13, 136, 188);
+}
+
+main{
+width: 100%;
+height: 100vh;
+margin: 0;
+padding: 0;
+background-color: #113978;
+
+}
+.center{
+height: 100%;
+width: 100%;
+justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+
+}
+.ticket{
+width: 900px;
+height: 350px;
+background-color: #edebe6;
+position: relative;
+align-items: center;
+display: flex;
+justify-content: space-between;
+
+
+
+}
+.left{
+height: 100%;
+width: 200px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+.right{
+width: 700px;
+height: 100%;
+padding-left: 20px;
+padding-right: 20px;
+background-image: linear-gradient(rgba(0, 12, 74, 0.7)45%, rgba(255,255,255,0)0%);
+background-position: left;
+background-size: 2px 25px;
+background-repeat: repeat-y;
+position: relative;
+flex-direction: column;
+ 
+}
+.circle{
+height: 40px;
+width: 40px;
+border-radius: 50%;
+background:#113978;
+
+}
+.circles{
+position: absolute;
+width: fit-content;
+height: 380px;
+top: 50%;
+transform: translate(0,-50%);
+left: 180px;
+display: flex;
+align-items: center ;
+justify-content: space-between;
+flex-direction: column;
+}
+
+.number{
+height: 300px;
+width: 100px;
+padding: 10px 20px 10px 20px;
+border: 2px solid #000b3d;
+border-radius: 1mm;
+writing-mode: vertical-lr;
+text-align: center;
+line-height: 50px;
+font-size: 30px;
+color: #113978;
+
+
+}
+.box{
+display: flex;
+flex-direction: row;
+align-content: space-between;
+height: 50px;
+}
+.pass-journey-container{
+display: flex;
+flex-direction: row;
+width: 100%;
+height: 100%;
+
+}
+.des-ticket{
+width: 60%;
+height: 100%;
+display: flex;
+flex-direction: row;
+padding-top: 10px; 
+
+}
+.box-journey{
+display: flex;
+flex-direction: column;
+
+}
+.des-journey{
+display: flex;
+flex-direction: column;
+padding-left: 20px;
+padding-bottom: 10px;
+
+}
+.des-title{
+padding-right: 50px;
+
+}
+.des-title h3{
+font-size: 15px;
+font-weight: 800px;
+color:#113978;
+}
+.des-content h4{
+font-size: 12px;
+color: rgb(83, 83, 83);
+}
+
+.des-passenger{
+width: 40%;
+height: 235px;
+background-color: rgb(13, 136, 188);
+border-top-left-radius: 10px;
+padding-top: 10px;
+
+
+
+}
+.des-container{
+display: flex;
+flex-direction: column;
+}
+.price-box{
+display: flex;
+flex-direction: row;
+}
+.button-download{
+font-family: "Ubuntu", sans-serif;
+  background-color:  #000b3d;
+  font-weight: 500;
+  font-size: 15px;
+  font-style: normal;
+  padding: 10px 10px 10px 20px;
+  width: 200px;
+  height: 50px;
+  margin: 40px 0px 20px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+</style>
+
+<body  onload="autoClick();">
+    <header class="header">
+
+        
+        <div class="nav-bar">
+            <div class="box-1">
+                <img class="logo" src="../images/logo2.12.png">
+            </div>
+            <div class="box-2">
+                <ul>
+                    <li><a  href="index.html">Home</a></li>
+                    <li><a href="findbus.html">Promotions & Offers</a></li>
+                    <li><a href="location.php">About Us</a></li>
+                    <li><a href="services.php">Services</a></li>
+                </ul>
+            </div>
+            <div class="box-3">
+                <div class="account-box">
+                    <div class="account-icon">
+                    
+                        <a href="account.php"> &nbsp;<i class="bi bi-person-circle"></i></i></a>
+    
+                    </div>
+                    <div class="account-name">
+                        <a id="name" href="account.php">Hello Ashane</a>
+                    </div>
+
+                </div>  
+            </div>   
+        </div>
+    </header> 
+    <main>
+        <div class="center">
+            
+            <div id="htmlContent" class="ticket">
+                <div class="left">
+                    <div class="number">
+                        <p style="font-size: 30px;">Ticket</p>
+                       
+                        <p style="font-size: 10px;">3546765789</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="box">
+                        <div class="box-heading-ticket">
+                            <img src="images/logoV3.4.png" alt="logo" style="height: 80px; width: 150px; ">
+                        </div>
+                        <div class="box-context">
+                         
+                            <p id="des" style="padding-left: 400px; padding-top: 20px; color: darkblue;">Ref No. 234567</p>
+                        </div>
+
+                    </div>
+
+                    <div class="ticket-title" style="text-align: center; font-size: 40px; color: darkblue; padding-bottom: 20px;">
+                        Ticket
+                    </div>
+
+
+                    <div class="pass-journey-container">
+                        <div class="des-container">
+
+                            <div class="title-one">
+                                <h2 style="background: #113978; width: 400px; padding: 5px 10px 5px 10px;">Journey Info</h2>
+                            </div>
+                    
+                            <div class="des-ticket">
+                                
+                                <div class="box-journey">
+                                    
+                                    <div class="des-journey">
+                                        
+                                        <div class="des-title">
+                                            <h3 >Departure</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>Colombo</h4>
+                                        </div>
+                                    </div>
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Departure Time</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>09.00AM</h4>
+                                        </div>
+                                    </div>
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Date</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>12-04-2024</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-journey">
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Arrival</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>Kandy</h4>
+                                        </div>
+                                    </div>
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Arrival Time</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>13.00PM</h4>
+                                        </div>
+                                    </div>
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Travel Duration</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>4.00Hours</h4>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="box-journey">
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Route No</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>01</h4>
+                                        </div>
+                                    </div>
+                                    <div class="des-journey">
+                                        <div class="des-title">
+                                            <h3>Via</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4>Warakapola</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="des-passenger">
+                        <div class="des-container">
+                            <div class="title-one">
+                                <h2 style="padding-left: 10px;">Passenger Info</h2>
+                            </div>
+                
+                        <div class="des-ticket">
+                            
+                            <div class="box-journey">
+                                
+                                <div class="des-journey">
+                                    
+                                    <div class="des-title">
+                                        <h3 >Passenger Name</h3>
+                                    </div>
+                                    <div class="des-content">
+                                        <h4>Ashane Lakshitha</h4>
+                                    </div>
+                                </div>
+                                <div class="des-journey">
+                                    <div class="des-title">
+                                        <h3>NIC</h3>
+                                    </div>
+                                    <div class="des-content">
+                                        <h4>20008765432</h4>
+                                    </div>
+                                </div>
+                                <div class="des-journey" style="padding-top: 20px; flex-direction: row; width:220px; ">
+                                    
+                                        <div class="des-title">
+                                            <h3 >Ticket Price</h3>
+                                        </div>
+                                        <div class="des-content">
+                                            <h4 style="font-size: 23px; font-weight: 200;  width: 150px; color: aliceblue; font-weight: 200; ">LKR 1500/=</h4>
+                                        </div>
+
+                                
+                                    
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    </div>
+                </div>    
+                    
+                </div>
+                <div class="circles">
+                    <div class="circle">
+
+                    </div>
+                    <div class="circle">
+                        
+                    </div>
+                </div>
+            
+            </div>
+            
+            
+
+            
+
+            
+
+        </div>
+        <button id="download" onclick="downloadTicket()">Download</button>
+
+    </main>
+
+    
+</body>
+<script>
+    
+    // Move the function outside DOMContentLoaded event listener
+    function downloadTicket() {
+        var element = document.getElementById("htmlContent");
+        html2canvas(element, {
+            onrendered: function(canvas) {
+                var imageData = canvas.toDataURL("image/jpeg");
+                var link = document.createElement('a');
+                link.download = "ticket.jpg";
+                link.href = imageData;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    }
+</script>
+    
+
+</html>

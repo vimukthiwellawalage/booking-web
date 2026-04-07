@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="style.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+
+.chatbox .incoming button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 7px;
+    background-color: #606560; 
+    border: black;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+
+.chatbox .incoming button:hover {
+    background-color: #3d3f3d;
+}
+
+
+.chatbox .incoming button + button {
+    margin-top: 10px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 7px;
+    background-color: #606560; 
+    border: black;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+.button:hover {
+    background-color: #3d3f3d;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="menuToggle">
+            <i class='bx bx-help-circle'></i>
+        </div>
+        <div class="container">
+            <div class="top-part">
+                <div class="agent-details">
+                <img src="ezbus.jpg" alt="">
+                <div class="agent-text">
+                <h3>EZ Bus</h3>
+                <p>Chat bot <span>(Online)</span></p>
+            </div>
+        </div>
+        <i class='bx bx-x' ></i>
+        </div>
+        <ul class ="chatbox">
+            <li class="chat incoming">
+                <P>Hi there 👋 </P>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea id="messageInput" placeholder="Enter a message...." required></textarea>
+            <i class='bx bx-send'></i>
+        </div>
+       
+    </div>
+    
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+        var messageInput = document.getElementById("messageInput");
+
+        messageInput.value = "Hi chatbot I want a Help..";
+    });
+
+        const chatInput = document.querySelector(".chat-input textarea");
+        const sendChatBtn = document.querySelector(".chat-input i");
+        const chatbox = document.querySelector(".chatbox");
+    
+        let userMessage;
+        const createChatLi = (message, className) => {
+    const chatLi = document.createElement("li");
+    chatLi.classList.add("chat", className);
+    chatLi.innerHTML = `<p>${message}</p>`;
+    return chatLi;
+}
+        const handleChat = () => {
+            userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+            const isOutgoing = chatbox.lastElementChild && chatbox.lastElementChild.classList.contains("outgoing");
+            chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+            setTimeout(() => {
+                if (userMessage.toLowerCase() === "hi chatbot i want a help.." || isOutgoing) {
+                    const buttonLi = createChatLi("<p1>Dear passenger<br>Choose an option.</p1> <button>Booking</button> <button>Tracking</button> <button>Payment</button> <button>Contact The Admin</button>", "incoming");
+                    chatbox.appendChild(buttonLi);
+                    buttonLi.querySelectorAll('button').forEach(button => {
+                        button.addEventListener('click', handleButtonClick);
+                    });
+                } else {
+                    setTimeout(() => {
+                        chatbox.appendChild(createChatLi("Thinking....", "incoming"));
+                    }, 1000);
+                }
+            }, 1000);
+            chatInput.value = "";
+        }
+        let bookingInitiated = false;
+
+const handleButtonClick = (event) => {
+    const buttonText = event.target.textContent;
+    chatbox.appendChild(createChatLi(buttonText, "outgoing")); 
+    setTimeout(() => {
+        if (!bookingInitiated) {
+            switch(buttonText.toLowerCase()) {
+                case "booking":
+                    chatbox.appendChild(createChatLi("<p3>....Booking....</p3> <button>Make Booking</button> <button>View Booking</button> <button>View Schedule</button>", "incoming")); // Change "outgoing" to "incoming"
+                    bookingInitiated = true;
+                    break;
+                case "tracking":
+                    chatbox.appendChild(createChatLi("Dear passenger,<br><br>Firstly, book your bus seat. Following this, we'll provide you with a tracking ID and a link via email. You can utilize this information to track your traveling bus.<br><br>Thank You,<br><a href=\"https://mail.google.com/mail/u/0/#search/l.sharneesh%40gmail.com\" class=\"button\" target=\"_blank\">Go To Gmail and Search</a>", "incoming"));
+                    break;
+                case "payment":
+                    chatbox.appendChild(createChatLi("Dear passenger,<br><br>we only accept card payments for Ezbus bookings. In the future, we aim to enhance our payment options to include QR payments. When using a Commerce Bank card, there will be no additional tax of 30/=. However, if any other card is used, a tax of 30/= will apply.<br><br>Thank You.<br>", "incoming")); // Change "outgoing" to "incoming"
+                    break;
+                    case "contact the admin":
+                    chatbox.appendChild(createChatLi("Dear Passenger,<br><br>If you're unable to click the button below, please send an email request directly to the admin to initiate contact.<br><br><a href=\"https://mail.google.com/mail/?view=cm&fs=1&to=l.sharneesh@gmail.com&su=Message%20from%20ChatBot&body=Dear%20Admin,%0D%0A%0D%0AI%20am%20interested%20in%20obtaining%20more%20information%20about%20EZbuslk.%20Could%20you%20please%20contact%20me%20at%20your%20earliest%20convenience%20to%20provide%20further%20details%3F%0D%0A%0D%0AThank%20you.\" class=\"button\" target=\"_blank\">Go To Gmail</a><br><br>Thank you.", "incoming")); // Change "outgoing" to "incoming"
+                    break;
+                default:
+                    break;
+            }
+        } else {
+
+            switch(buttonText.toLowerCase()) {
+                case "make booking":
+                    chatbox.appendChild(createChatLi("Booking in progress...", "incoming"));
+                    break;
+                case "view booking":
+                    chatbox.appendChild(createChatLi("Viewing booking...", "incoming"));
+                    break;
+                case "view schedule":
+                    chatbox.appendChild(createChatLi("Viewing schedule...", "incoming"));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }, 1000);
+}
+
+
+
+
+        sendChatBtn.addEventListener("click", handleChat);
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector('.menuToggle');
+            const container = document.querySelector('.container');
+    
+            menuToggle.onclick = function() {
+                container.classList.toggle('active');
+            }
+            document.getElementById("leftPart").style.display = "none";
+        });
+    </script>
+    
+        
+    
+</body>
+</html>
