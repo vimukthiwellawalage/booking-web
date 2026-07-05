@@ -46,4 +46,4 @@ The following module is actively under development:
 
 ## 👥 Contributor
 
-* Vimukthi Wellawalage - Lead Developer
+* **Vimukthi Wellawalage** - Lead Developer
