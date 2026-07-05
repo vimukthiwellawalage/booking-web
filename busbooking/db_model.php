@@ -82,8 +82,8 @@ if(isset($_POST["paymentdetails"])){
     $mail->SMTPSecure = 'ssl';                            
     $mail->Port = 465;                                    
     
-    $mail->setFrom('sharneeshan1001@gmail.com', 'ezBusLK');
-    $mail->addAddress($email, 'Recipient Name'); 
+    $mail->setFrom('sharneeshan1001@gmail.com', 'Yamu');
+    $mail->addAddress($email, 'Recipient Name');
     
     $mail->isHTML(true);                                
     
@@ -225,14 +225,14 @@ if (isset($_POST["addInquiryButton"])) {
     $mail->SMTPSecure = 'ssl';                            
     $mail->Port = 465;                                    
 
-    $mail->setFrom('sharneeshan1001@gmail.com', 'ezBusLK');
-    $mail->addAddress($email, $name); 
+    $mail->setFrom('sharneeshan1001@gmail.com', 'Yamu');
+    $mail->addAddress($email, $name);
 
-    $mail->isHTML(true);                                
+    $mail->isHTML(true);
 
 
     $mail->Subject = 'Request For Bus';
-    $mail->Body = "Dear $name,<br><br>Thank you for your bus request with ezBusLK.<br><br>
+    $mail->Body = "Dear $name,<br><br>Thank you for your bus request with Yamu.<br><br>
                     Details of your request:<br>
                     Name: $name<br>
                     NIC: $nic<br>
@@ -241,7 +241,7 @@ if (isset($_POST["addInquiryButton"])) {
                     Start Date: $startDate<br>
                     End Date: $endDate<br><br>
                     We will respond to your request soon.";
-    $mail->AltBody = "Dear $name,\n\nThank you for your bus request with ezBusLK.\n\n
+    $mail->AltBody = "Dear $name,\n\nThank you for your bus request with Yamu.\n\n
                     Details of your request:\n
                     Name: $name\n
                     NIC: $nic\n

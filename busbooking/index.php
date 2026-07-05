@@ -128,21 +128,21 @@ if (isset($_POST["submit-index"])) {
 
 
     <section class="block">
-        <h1 class="block-heading">Welcome to EzBusLk</h1>
+        <h1 class="block-heading">Welcome to Yamu</h1>
         <div class="block-container">
             <div class="sub-block">
-                <p>ezBusLK is a pioneering online platform revolutionizing the bus ticket booking experience in Sri Lanka.
-                    With a user-centric approach, ezBusLK offers a seamless solution for passengers to secure their bus
+                <p>Yamu is a pioneering online platform revolutionizing the bus ticket booking experience in Sri Lanka.
+                    With a user-centric approach, Yamu offers a seamless solution for passengers to secure their bus
                     seats conveniently and efficiently, eliminating the hassle of traditional ticket booking methods.
                     The platform's intuitive interface empowers users to browse through a wide range of bus operators, routes,
                     and schedules, allowing them to select their preferred journey with ease. </p>
             </div>
             <div class="sub-block">
                 <p>
-                    Beyond its user-friendly interface, ezBusLK prioritizes reliability and customer satisfaction,
+                    Beyond its user-friendly interface, Yamu prioritizes reliability and customer satisfaction,
                     aiming to enhance the overall travel experience for its users. With features like real-time bus tracking,
                     passengers can stay informed about their journey's progress, minimizing uncertainties and delays. Moreover,
-                    ezBusLK's commitment to transparency and accessibility extends to its customer support system, where
+                    Yamu's commitment to transparency and accessibility extends to its customer support system, where
                     dedicated assistance is available to address any queries or concerns promptly.
                 </p>
             </div>
@@ -163,7 +163,7 @@ if (isset($_POST["submit-index"])) {
                 <div class="agent-details">
                 <img src="ezbus.jpg" alt="">
                 <div class="agent-text">
-                <h3>EZ Bus</h3>
+                <h3>Yamu</h3>
                 <p>Chat bot <span>(Online)</span></p>
             </div>
         </div>
@@ -589,10 +589,10 @@ const handleButtonClick = (event) => {
                     chatbox.appendChild(createChatLi("Dear passenger,<br><br>Firstly, book your bus seat. Following this, we'll provide you with a tracking ID and a link via email. You can utilize this information to track your traveling bus.<br><br>Thank You,<br><a href=\"https://mail.google.com/mail/u/0/#search/l.sharneesh%40gmail.com\" class=\"button\" target=\"_blank\">Go To Gmail and Search</a>", "incoming"));
                     break;
                 case "payment":
-                    chatbox.appendChild(createChatLi("Dear passenger,<br><br>we only accept card payments for Ezbus bookings. In the future, we aim to enhance our payment options to include QR payments. When using a Commerce Bank card, there will be no additional tax of 30/=. However, if any other card is used, a tax of 30/= will apply.<br><br>Thank You.<br>", "incoming")); // Change "outgoing" to "incoming"
+                    chatbox.appendChild(createChatLi("Dear passenger,<br><br>we only accept card payments for Yamu bookings. In the future, we aim to enhance our payment options to include QR payments. When using a Commerce Bank card, there will be no additional tax of 30/=. However, if any other card is used, a tax of 30/= will apply.<br><br>Thank You.<br>", "incoming")); // Change "outgoing" to "incoming"
                     break;
                     case "contact the admin":
-                    chatbox.appendChild(createChatLi("Dear Passenger,<br><br>If you're unable to click the button below, please send an email request directly to the admin to initiate contact.<br><br><a href=\"https://mail.google.com/mail/?view=cm&fs=1&to=l.sharneesh@gmail.com&su=Message%20from%20ChatBot&body=Dear%20Admin,%0D%0A%0D%0AI%20am%20interested%20in%20obtaining%20more%20information%20about%20EZbuslk.%20Could%20you%20please%20contact%20me%20at%20your%20earliest%20convenience%20to%20provide%20further%20details%3F%0D%0A%0D%0AThank%20you.\" class=\"button\" target=\"_blank\">Go To Gmail</a><br><br>Thank you.", "incoming")); // Change "outgoing" to "incoming"
+                    chatbox.appendChild(createChatLi("Dear Passenger,<br><br>If you're unable to click the button below, please send an email request directly to the admin to initiate contact.<br><br><a href=\"https://mail.google.com/mail/?view=cm&fs=1&to=l.sharneesh@gmail.com&su=Message%20from%20ChatBot&body=Dear%20Admin,%0D%0A%0D%0AI%20am%20interested%20in%20obtaining%20more%20information%20about%20Yamu.%20Could%20you%20please%20contact%20me%20at%20your%20earliest%20convenience%20to%20provide%20further%20details%3F%0D%0A%0D%0AThank%20you.\" class=\"button\" target=\"_blank\">Go To Gmail</a><br><br>Thank you.", "incoming")); // Change "outgoing" to "incoming"
                     break;
                 default:
                     break;
@@ -667,10 +667,10 @@ const handleButtonClick = (event) => {
                 <p class="subblock-paragraph">
 
 
-                    With ezBusLK's bus seat booking service, passengers can reserve their desired seats for
+                    With Yamu's bus seat booking service, passengers can reserve their desired seats for
                     their journey with utmost convenience. Whether it's a window seat for scenic views or
                     an aisle seat for easy access, travelers can choose their preferred spot with just a few clicks.
-                    Say goodbye to long queues and last-minute rushes – ezBusLK ensures a seamless booking experience
+                    Say goodbye to long queues and last-minute rushes – Yamu ensures a seamless booking experience
                     for every passenger.
                 </p>
 
@@ -697,10 +697,10 @@ const handleButtonClick = (event) => {
 
 
 
-                    With ezBusLK's bus seat booking service, passengers can reserve their desired seats
+                    With Yamu's bus seat booking service, passengers can reserve their desired seats
                     for their journey with utmost convenience. Whether it's a window seat for scenic views
                     or an aisle seat for easy access, travelers can choose their preferred spot with just
-                    a few clicks. Say goodbye to long queues and last-minute rushes – ezBusLK ensures a
+                    a few clicks. Say goodbye to long queues and last-minute rushes – Yamu ensures a
                     seamless booking experience for every passenger.
                 </p>
 
@@ -731,11 +731,11 @@ const handleButtonClick = (event) => {
 
 
 
-                    With ezBusLK's bus seat booking service, passengers can reserve their desired
+                    With Yamu's bus seat booking service, passengers can reserve their desired
                     seats for their journey with utmost convenience. Whether it's a window seat
                     for scenic views or an aisle seat for easy access, travelers can choose their
                     preferred spot with just a few clicks. Say goodbye to long queues and last-minute rushes
-                    – ezBusLK ensures a seamless booking experience for every passenger.
+                    – Yamu ensures a seamless booking experience for every passenger.
                 </p>
 
             </div>
@@ -755,10 +755,10 @@ const handleButtonClick = (event) => {
                 <h1 class="skyblue-subblock-heading">Instant Assistance, Anytime, Anywhere</h1>
                 <p class="subblock-paragraph">
 
-                    With ezBusLK's bus seat booking service, passengers can reserve their desired seats for their
+                    With Yamu's bus seat booking service, passengers can reserve their desired seats for their
                     journey with utmost convenience. Whether it's a window seat for scenic views or an aisle seat
                     for easy access, travelers can choose their preferred spot with just a few clicks. Say goodbye
-                    to long queues and last-minute rushes – ezBusLK ensures a seamless booking experience for
+                    to long queues and last-minute rushes – Yamu ensures a seamless booking experience for
                     every passenger.
                 </p>
                 <div style="float: left;" class="link-box">
@@ -792,99 +792,7 @@ const handleButtonClick = (event) => {
 
     </section>
 
-    <footer>
-
-        <div class="footer-row-logo">
-
-        </div>
-        <div class="footer-row-context">
-            <div class="footer-column">
-                <h1 class="footer-title">
-                    Contact Info
-                </h1>
-                <p class="footer-context">
-                    Contact No
-                    011 23 45 567
-                    011 45 67 890
-                </p>
-                <p class="footer-context">
-                    Address
-                    No 131/5A, Colombo 01.
-                </p>
-                <p class="footer-context">
-                    Email
-                    ezbuslkinfo@gmail.com
-                </p>
-
-            </div>
-            <div class="footer-column">
-                <h1 class="footer-title">
-                    Quick Links
-                </h1>
-                <p class="footer-context">
-                    Home
-                </p>
-                <p class="footer-context">
-                    Services
-
-                </p>
-                <p class="footer-context">
-                    Contact
-
-                </p>
-                <p class="footer-context">
-                    View Schedule
-
-                </p>
-                <p class="footer-context">
-                    Help Service
-
-                </p>
-                <p class="footer-context">
-                    Book Seat
-                </p>
-
-            </div>
-            <div class="footer-column">
-                <h1 class="footer-title">
-                    Follow Us
-                </h1>
-                <p class="footer-context">
-                    Privacy & Policy
-                </p>
-                <p class="footer-context">
-                    Terms & Conditions
-                </p>
-            </div>
-            <div class="footer-column">
-                <h1 class="footer-title">
-                    National Transport Commision
-                </h1>
-                <p class="footer-context">
-                    Park Rd, Colombo 05.
-
-                </p>
-                <p class="footer-context">
-
-                    +94 011-2587372
-                </p>
-            </div>
-        </div>
-        <div class="footer-row">
-            <img class="footer-logo" src="images/logo2.12.png">
-            <p style="font-size: 0.8rem; margin-right: 20px;">&copy; All Rights Reserved</p>
-            <p style="font-size: 0.8rem;">Designed & Developed by InnovateSoft Solutions</p>
-        </div>
-
-
-
-
-
-
-
-
-
-    </footer>
+    <?php include("footer.php"); ?>
 </main>
 
 

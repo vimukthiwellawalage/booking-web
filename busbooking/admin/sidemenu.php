@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Yamu - Admin</title>
 
     <link rel="stylesheet" href="admin.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
         <div class="sidemenu">
             <div class="logo">
                 
-                <img class="sub-logo" src="../images/logo2.12.png">
+                <img class="sub-logo" src="../images/yamu-logo.png" alt="Yamu Logo">
                 
                 
             </div>

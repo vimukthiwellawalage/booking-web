@@ -17,68 +17,11 @@ if (isset($_POST["inquire-bus"])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="stylesheetone.css">
-    <link rel="stylesheet" href="stylepopup.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" 
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
-    crossorigin="anonymous"></script>
-    
-</head>
-<body>
-    
-    <header class="header">
-
-        
-        <div class="nav-bar">
-            <div class="box-1">
-                <img class="logo" src="images/logo2.12.png">
-            </div>
-            <div class="box-2">
-                <ul>
-                    <li><a  href="index.php">Home</a></li>
-                    <li><a href="viewSchedule.php">View Schedule</a></li>
-                    <li><a href="findspecialbus.php">Special Buses</a></li>
-                    <li><a href="aboutus.php">About Us</a></li>
-
-
-                </ul>
-            </div>
-            <div class="box-3">
-                <div class="account-box">
-                    <div class="account-icon">
-                    
-                        <a href="login.php"> &nbsp;<i class="bi bi-person-circle"></i></i></a>
-    
-                    </div>
-                    <div class="account-name">
-                        <a id="name" href="login.php">Agent Login</a>
-                    </div>
-
-                </div>
-
-                
-            </div>
-            
-        </div>
-
-        
-
-    </header>
-    
+<?php
+$pageTitle = "Yamu - Special Buses";
+$extraStyles = ["stylepopup.css"];
+include("header.php");
+?>
 <main>
 
     <section class="find-bus-bar">
@@ -428,98 +371,5 @@ function validatePhoneNumber(contactNo) {
 
 
 
-    <footer>
-
-<div class="footer-row-logo">
-
-</div>
-<div class="footer-row-context">
-    <div class="footer-column">
-        <h1 class="footer-title">
-            Contact Info
-        </h1>
-        <p class="footer-context">
-            Contact No
-            011 23 45 567
-            011 45 67 890
-        </p>
-        <p class="footer-context">
-            Address
-            No 131/5A, Colombo 01.
-        </p>
-        <p class="footer-context">
-            Email
-            ezbuslkinfo@gmail.com
-        </p>
-
-    </div>
-    <div class="footer-column">
-        <h1 class="footer-title">
-            Quick Links
-        </h1>
-        <p class="footer-context">
-            Home
-        </p>
-        <p class="footer-context">
-            Services
-
-        </p>
-        <p class="footer-context">
-            Contact
-
-        </p>
-        <p class="footer-context">
-            View Schedule
-
-        </p>
-        <p class="footer-context">
-            Help Service
-
-        </p>
-        <p class="footer-context">
-            Book Seat
-        </p>
-
-    </div>
-    <div class="footer-column">
-        <h1 class="footer-title">
-            Follow Us
-        </h1>
-        <p class="footer-context">
-            Privacy & Policy
-        </p>
-        <p class="footer-context">
-            Terms & Conditions
-        </p>
-    </div>
-    <div class="footer-column">
-        <h1 class="footer-title">
-            National Transport Commision
-        </h1>
-        <p class="footer-context">
-            Park Rd, Colombo 05.
-
-        </p>
-        <p class="footer-context">
-
-            +94 011-2587372
-        </p>
-    </div>
-</div>
-<div class="footer-row">
-    <img class="footer-logo" src="images/logo2.12.png">
-    <p style="font-size: 0.8rem; margin-right: 20px;">&copy; All Rights Reserved</p>
-    <p style="font-size: 0.8rem;">Designed & Developed by InnovateSoft Solutions</p>
-</div>
-
-
-
-
-
-
-
-
-
-</footer>
-
+    <?php include("footer.php"); ?>
 </main>

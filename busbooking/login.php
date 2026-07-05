@@ -10,7 +10,7 @@ require_once("db_conn.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EzBusLK Login</title>
+    <title>Yamu - Login</title>
     <link rel="stylesheet" href="stylesheetone.css">
     <link rel="stylesheet" href="stylesheet2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,12 +60,12 @@ require_once("db_conn.php");
 
 
     <section class="form">
-    <a href="index.php"><img class="logo-login" src="logoV2.11.png"></a>
+    <a href="index.php"><img class="logo-login" src="images/yamu-logo.png" alt="Yamu Logo"></a>
     <a href="index.php"><button class="back-button">Back</button></a>
         <div class="inquire-form">
             <form id="form1" name="form1" action="db_model.php" method="post"onsubmit="return validateForm()">
                 <div class="headings">
-                    <p class="login-form-title">Login - EzBusLK</p>
+                    <p class="login-form-title">Login - Yamu</p>
                 </div>
                 <div class="form-details">
                     <div class="inputs-login">

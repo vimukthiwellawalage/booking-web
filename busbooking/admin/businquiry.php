@@ -39,14 +39,14 @@ if (isset($_POST["confirmInquiry"])) {
         $mail->SMTPSecure = 'ssl';                            
         $mail->Port = 465;     
 
-        $mail->setFrom('sharneeshan1001@gmail.com', 'ezBusLK');
-        $mail->addAddress($email, $name); 
+        $mail->setFrom('sharneeshan1001@gmail.com', 'Yamu');
+        $mail->addAddress($email, $name);
 
-        $mail->isHTML(true);    
+        $mail->isHTML(true);
 
         $mail->Subject = 'Confirm The Bus';
-        $mail->Body = "Dear $name,<br><br>Your bus request for bus ID $busID has been confirmed.<br><br>Start Date: $startDate<br>End Date: $endDate<br><br>Thank you for choosing ezBusLK.";
-        $mail->AltBody = "Dear $name,\n\nYour bus request for bus ID $busID has been confirmed.\n\nStart Date: $startDate\nEnd Date: $endDate\n\nThank you for choosing ezBusLK.";
+        $mail->Body = "Dear $name,<br><br>Your bus request for bus ID $busID has been confirmed.<br><br>Start Date: $startDate<br>End Date: $endDate<br><br>Thank you for choosing Yamu.";
+        $mail->AltBody = "Dear $name,\n\nYour bus request for bus ID $busID has been confirmed.\n\nStart Date: $startDate\nEnd Date: $endDate\n\nThank you for choosing Yamu.";
 
         if (!$mail->send()) {
             echo 'Message could not be sent.';

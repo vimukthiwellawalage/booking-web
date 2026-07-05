@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Outer Clove</title>
+    <title>Yamu - Inquire</title>
     <link rel="stylesheet" href="formstyle.css">
 
 
@@ -36,7 +36,7 @@
 
         <div class="nav-bar-form">
             <div class="heading">
-                <a href="index.php"><img class="logo" src="images/logo2.12.png"></a>
+                <a href="index.php"><img class="logo" src="images/yamu-logo.png" alt="Yamu Logo"></a>
             </div>
             <div class="links">
                 <a class="active" id="active" href="functions.php">Back</a>

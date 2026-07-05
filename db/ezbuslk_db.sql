@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2024 at 04:46 PM
+-- Generation Time: Jul 05, 2026 at 04:46 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -118,16 +118,43 @@ CREATE TABLE `bus_booking` (
   `status` varchar(20) DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `bus_booking`
+-- Table structure for table `bus_live_location`
 --
 
-INSERT INTO `bus_booking` (`inquiryID`, `busID`, `name`, `nic`, `email`, `contactNo`, `startDate`, `endDate`, `addedDate`, `status`) VALUES
-(2, 'NC3973', 'Ashane Lakshitha', '200234409977', 'ashane@gmail.com', '0776522211', '2024-04-26', '2024-04-27', '2024-04-25 09:54:54', 'confirmed'),
-(3, 'NC3973', 'Diberdan', '200234561122', 'diberdan@gmail.com', '0776542293', '2024-04-26', '2024-04-29', '2024-04-25 11:36:16', 'confirmed'),
-(4, 'NB6502', 'Ashane Lakshitha', '200245672211', 'ashaneicbt@gmail.com', '0776542211', '2024-04-27', '2024-04-30', '2024-04-26 07:51:36', 'confirmed'),
-(6, 'NB6502', 'Ashane Lakshitha', '200232122222', 'ashaneicbt@gmail.com', '0776542211', '2024-04-29', '2024-04-30', '2024-04-26 10:05:39', 'confirmed'),
-(7, 'NC3973', 'Ashane Lakshitha', '200232212211', 'ashaneicbt@gmail.com', '0776545211', '2024-05-01', '2024-05-16', '2024-05-01 14:33:28', 'pending');
+CREATE TABLE `bus_live_location` (
+  `locationID` int(11) NOT NULL,
+  `busID` varchar(100) NOT NULL,
+  `tripID` varchar(100) DEFAULT NULL,
+  `latitude` decimal(10,7) NOT NULL,
+  `longitude` decimal(10,7) NOT NULL,
+  `speedKmh` decimal(5,2) DEFAULT NULL,
+  `headingDegrees` decimal(5,2) DEFAULT NULL,
+  `recordedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bus_live_location`
+--
+
+INSERT INTO `bus_live_location` (`locationID`, `busID`, `tripID`, `latitude`, `longitude`, `speedKmh`, `headingDegrees`, `recordedAt`) VALUES
+(1, 'NC0909', NULL, 6.9271000, 79.8612000, 45.00, 90.00, '2026-07-04 17:20:33'),
+(2, 'NC0909', NULL, 6.9271000, 79.8612000, 35.00, 187.27, '2026-07-04 17:22:33'),
+(3, 'NC0909', NULL, 6.8905000, 79.8565000, 39.00, 187.27, '2026-07-04 17:22:34'),
+(4, 'NC0909', NULL, 6.8905000, 79.8565000, 42.00, 164.10, '2026-07-04 17:22:35'),
+(5, 'NC0909', NULL, 6.7130000, 79.9074000, 39.00, 164.10, '2026-07-04 17:22:37'),
+(6, 'NC0909', NULL, 6.7130000, 79.9074000, 42.00, 157.46, '2026-07-04 17:22:38'),
+(7, 'NC0909', NULL, 6.5854000, 79.9607000, 43.00, 157.46, '2026-07-04 17:22:39'),
+(8, 'NC0909', NULL, 6.5854000, 79.9607000, 35.00, 154.05, '2026-07-04 17:22:40'),
+(9, 'NC0909', NULL, 6.0535000, 80.2210000, 45.00, 154.05, '2026-07-04 17:22:41'),
+(10, 'NC0909', NULL, 6.0535000, 80.2210000, 42.00, 144.40, '2026-07-04 17:22:42'),
+(11, 'NC0909', NULL, 6.0128000, 80.2503000, 49.00, 144.40, '2026-07-04 17:22:43'),
+(12, 'NC0909', NULL, 6.0128000, 80.2503000, 45.00, 100.80, '2026-07-04 17:22:44'),
+(13, 'NC0909', NULL, 5.9549000, 80.5550000, 35.00, 100.80, '2026-07-04 17:22:45'),
+(14, 'NC0909', NULL, 5.9549000, 80.5550000, 42.00, 59.41, '2026-07-04 17:22:46'),
+(15, 'NC0909', NULL, 6.4128000, 81.3354000, 37.00, 59.41, '2026-07-04 17:22:47');
 
 -- --------------------------------------------------------
 
@@ -193,7 +220,8 @@ INSERT INTO `customer` (`customerID`, `nic`, `email`, `phoneNo`, `name`) VALUES
 (47, '200254327211', 'ashaneicbt@gmail.com', '0775421122', 'Ashane Lakshitha'),
 (48, '200234532122', 'ashaneicbt@gmail.com', '0776532211', 'Ashane Lakshitha'),
 (49, '200235502294', 'ashaneicbt@gmail.com', '0776521122', 'Ashane Lakshitha'),
-(50, '200234221122', 'ashaneicbt@gmail.com', '0776652211', 'Ashane Lakshitha');
+(50, '200234221122', 'ashaneicbt@gmail.com', '0776652211', 'Ashane Lakshitha'),
+(51, '200023456789', 'passenger@yamu.lk', '0771234567', 'Test Passenger');
 
 -- --------------------------------------------------------
 
@@ -206,6 +234,29 @@ CREATE TABLE `feedback` (
   `feedback` text DEFAULT NULL,
   `rating` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `iot_device`
+--
+
+CREATE TABLE `iot_device` (
+  `deviceID` int(11) NOT NULL,
+  `deviceUID` varchar(100) NOT NULL,
+  `busID` varchar(100) NOT NULL,
+  `apiKey` varchar(100) NOT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'active',
+  `lastPingAt` datetime DEFAULT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `iot_device`
+--
+
+INSERT INTO `iot_device` (`deviceID`, `deviceUID`, `busID`, `apiKey`, `status`, `lastPingAt`, `createdAt`) VALUES
+(1, 'TEST-DEVICE-NC0909', 'NC0909', 'test-api-key-nc0909-change-me', 'active', '2026-07-04 20:52:47', '2026-07-04 15:17:08');
 
 -- --------------------------------------------------------
 
@@ -435,7 +486,7 @@ INSERT INTO `standard_bus` (`busID`, `routeID`, `userID`, `class`) VALUES
 ('ND0212', '02CM', 9, 'Semi Luxury'),
 ('ND0223', '01CK', 1, 'Normal'),
 ('ND0954', '87CJ', 7, 'Semi Luxury'),
-('ND1111', '05CK', 1, 'Semi Luxury');
+('ND1111', '05CK', 11, 'Semi Luxury');
 
 -- --------------------------------------------------------
 
@@ -445,42 +496,44 @@ INSERT INTO `standard_bus` (`busID`, `routeID`, `userID`, `class`) VALUES
 
 CREATE TABLE `stop` (
   `stopID` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL
+  `city` varchar(100) NOT NULL,
+  `latitude` decimal(10,7) DEFAULT NULL,
+  `longitude` decimal(10,7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `stop`
 --
 
-INSERT INTO `stop` (`stopID`, `city`) VALUES
-('ALA', 'Alawwa'),
-('ALU', 'Aluthgama'),
-('AMB', 'Ambepussa'),
-('ANU', 'Anuradhapura'),
-('BAM', 'Bambalapitiya'),
-('COL', 'Colombo'),
-('GAL', 'Galle'),
-('GAM', 'Gampaha'),
-('HOR', 'Horana'),
-('JF', 'Jaffna'),
-('KAD', 'Kadawatha'),
-('KAL', 'Kalutara'),
-('KAN', 'Kandy'),
-('KAT', 'Katharagama'),
-('KDG', 'Kadugannawa'),
-('KEG', 'Kegalle'),
-('KOG', 'Koggala'),
-('KUR', 'Kurunegala'),
-('MAT', 'Matara'),
-('MAW', 'Mawanella'),
-('NEG', 'Negombo'),
-('NIT', 'Nittambuwa'),
-('PAN', 'Panadura'),
-('PER', 'Peradeniya'),
-('PIL', 'Piliyandala'),
-('PUT', 'Puththalam'),
-('VAV', 'Vavuniya'),
-('WAR', 'Warakapola');
+INSERT INTO `stop` (`stopID`, `city`, `latitude`, `longitude`) VALUES
+('ALA', 'Alawwa', 7.0417000, 80.2069000),
+('ALU', 'Aluthgama', 6.4278000, 79.9989000),
+('AMB', 'Ambepussa', 7.1667000, 80.1167000),
+('ANU', 'Anuradhapura', 8.3114000, 80.4037000),
+('BAM', 'Bambalapitiya', 6.8905000, 79.8565000),
+('COL', 'Colombo', 6.9271000, 79.8612000),
+('GAL', 'Galle', 6.0535000, 80.2210000),
+('GAM', 'Gampaha', 7.0917000, 79.9931000),
+('HOR', 'Horana', 6.7151000, 80.0631000),
+('JF', 'Jaffna', 9.6615000, 80.0255000),
+('KAD', 'Kadawatha', 7.0008000, 79.9512000),
+('KAL', 'Kalutara', 6.5854000, 79.9607000),
+('KAN', 'Kandy', 7.2906000, 80.6337000),
+('KAT', 'Katharagama', 6.4128000, 81.3354000),
+('KDG', 'Kadugannawa', 7.2547000, 80.5228000),
+('KEG', 'Kegalle', 7.2513000, 80.3464000),
+('KOG', 'Koggala', 6.0128000, 80.2503000),
+('KUR', 'Kurunegala', 7.4867000, 80.3647000),
+('MAT', 'Matara', 5.9549000, 80.5550000),
+('MAW', 'Mawanella', 7.2513000, 80.4464000),
+('NEG', 'Negombo', 7.2083000, 79.8358000),
+('NIT', 'Nittambuwa', 7.1439000, 80.0965000),
+('PAN', 'Panadura', 6.7130000, 79.9074000),
+('PER', 'Peradeniya', 7.2599000, 80.5989000),
+('PIL', 'Piliyandala', 6.8006000, 79.9226000),
+('PUT', 'Puththalam', 8.0362000, 79.8283000),
+('VAV', 'Vavuniya', 8.7514000, 80.4971000),
+('WAR', 'Warakapola', 7.2261000, 80.1972000);
 
 -- --------------------------------------------------------
 
@@ -518,23 +571,21 @@ CREATE TABLE `trip` (
   `turnType` varchar(20) NOT NULL,
   `closingTime` time NOT NULL,
   `avaSeats` int(11) NOT NULL DEFAULT 49,
-  `status` varchar(20) DEFAULT 'status',
-  `longitude` geometry DEFAULT NULL,
-  `latitude` geometry DEFAULT NULL
+  `status` varchar(20) DEFAULT 'status'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `trip`
 --
 
-INSERT INTO `trip` (`tripID`, `busID`, `routeID`, `turnID`, `date`, `turnType`, `closingTime`, `avaSeats`, `status`, `longitude`, `latitude`) VALUES
-('01CK-09001400-ND0223-240427DEP', 'ND0223', '01CK', '01CK-09001400', '2024-04-27', 'depart', '08:00:00', 54, 'active', NULL, NULL),
-('02CM-08001730-ND0212-240503DEP', 'ND0212', '02CM', '02CM-08001730', '2024-05-03', 'depart', '07:00:00', 44, 'active', NULL, NULL),
-('05CK-09001500-ND1111-240503DEP', 'ND1111', '05CK', '05CK-09001500', '2024-05-03', 'depart', '08:00:00', 54, 'active', NULL, NULL),
-('32CK-05001800-NC0909-240503DEP', 'NC0909', '32CK', '32CK-05001800', '2024-05-03', 'depart', '04:00:00', 38, 'active', NULL, NULL),
-('32CK-11002230-NC6700-240427ARR', 'NC6700', '32CK', '32CK-11002230', '2024-04-27', 'arrive', '21:30:00', 49, '', NULL, NULL),
-('32CK-11002230-NC6700-240503DEP', 'NC6700', '32CK', '32CK-11002230', '2024-05-03', 'depart', '10:00:00', 49, 'active', NULL, NULL),
-('87CJ-09001800-ND0954-240427DEP', 'ND0954', '87CJ', '87CJ-09001800', '2024-04-27', 'depart', '08:00:00', 38, 'active', NULL, NULL);
+INSERT INTO `trip` (`tripID`, `busID`, `routeID`, `turnID`, `date`, `turnType`, `closingTime`, `avaSeats`, `status`) VALUES
+('01CK-09001400-ND0223-240427DEP', 'ND0223', '01CK', '01CK-09001400', '2024-04-27', 'depart', '08:00:00', 54, 'active'),
+('02CM-08001730-ND0212-240503DEP', 'ND0212', '02CM', '02CM-08001730', '2024-05-03', 'depart', '07:00:00', 44, 'active'),
+('05CK-09001500-ND1111-240503DEP', 'ND1111', '05CK', '05CK-09001500', '2024-05-03', 'depart', '08:00:00', 54, 'active'),
+('32CK-05001800-NC0909-240503DEP', 'NC0909', '32CK', '32CK-05001800', '2024-05-03', 'depart', '04:00:00', 38, 'active'),
+('32CK-11002230-NC6700-240427ARR', 'NC6700', '32CK', '32CK-11002230', '2024-04-27', 'arrive', '21:30:00', 49, ''),
+('32CK-11002230-NC6700-240503DEP', 'NC6700', '32CK', '32CK-11002230', '2024-05-03', 'depart', '10:00:00', 49, 'active'),
+('87CJ-09001800-ND0954-240427DEP', 'ND0954', '87CJ', '87CJ-09001800', '2024-04-27', 'depart', '08:00:00', 38, 'active');
 
 -- --------------------------------------------------------
 
@@ -695,7 +746,10 @@ INSERT INTO `user` (`userID`, `type`, `email`, `password`, `name`, `status`) VAL
 (6, 'admin', 'admin@gmail.com', '$2y$10$q/ApFKtiQRENapAYXnSk4.6IHeYetG1GsRaN50V2/BdlCNidSebse', 'Admin', 'active'),
 (7, 'operator', '87jaffnabus@gmai.com', '$2y$10$.4h5b92PVT9KNeeX2JDbsOwxam7hNN23h1QQtXgF3e5B2/7rFGONW', 'Jaffna', 'active'),
 (8, 'operator', '32ck@gmail.com', '$2y$10$CA4KNkeSzE3JTtp6H4dapevw1aK98Ej9vBUv9OlyCXzTQteB85ngS', 'ColomboKatharagama', 'active'),
-(9, 'operator', '1220cm@gmail.com', '$2y$10$eXivkAezq5gtETFeW8ymuOMn9TamJL/3VehxoxNnaKAMvHBjcWRAi', 'ColomboMatara1220', 'active');
+(9, 'operator', '1220cm@gmail.com', '$2y$10$eXivkAezq5gtETFeW8ymuOMn9TamJL/3VehxoxNnaKAMvHBjcWRAi', 'ColomboMatara1220', 'active'),
+(10, 'admin', 'admin@yamu.lk', '$2y$10$C/RXqPnqC0ZVo5SepyXiZu0S0XVN1dINoKt0/4LVWxZSjOK4C3J4S', 'Yamu Admin', 'active'),
+(11, 'operator', 'operator1@yamu.lk', '$2y$10$36WAqkLBMwxeROxatsSpZeYL8GkTt/0D0s/Yb/enXs/sFUWPj0T8.', 'Route 32 Operator', 'active'),
+(12, 'operator', 'operator2@yamu.lk', '$2y$10$36WAqkLBMwxeROxatsSpZeYL8GkTt/0D0s/Yb/enXs/sFUWPj0T8.', 'Route 32 Operator', 'active');
 
 --
 -- Indexes for dumped tables
@@ -724,6 +778,15 @@ ALTER TABLE `bus_booking`
   ADD KEY `fk_busid1` (`busID`);
 
 --
+-- Indexes for table `bus_live_location`
+--
+ALTER TABLE `bus_live_location`
+  ADD PRIMARY KEY (`locationID`),
+  ADD KEY `fk_busid_liveloc` (`busID`),
+  ADD KEY `fk_tripid_liveloc` (`tripID`),
+  ADD KEY `idx_bus_recorded` (`busID`,`recordedAt`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -740,6 +803,15 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`feedbackID`);
+
+--
+-- Indexes for table `iot_device`
+--
+ALTER TABLE `iot_device`
+  ADD PRIMARY KEY (`deviceID`),
+  ADD UNIQUE KEY `deviceUID` (`deviceUID`),
+  ADD UNIQUE KEY `apiKey` (`apiKey`),
+  ADD KEY `fk_busid_iotdevice` (`busID`);
 
 --
 -- Indexes for table `payment`
@@ -844,6 +916,12 @@ ALTER TABLE `bus_booking`
   MODIFY `inquiryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `bus_live_location`
+--
+ALTER TABLE `bus_live_location`
+  MODIFY `locationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
@@ -853,13 +931,19 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `iot_device`
+--
+ALTER TABLE `iot_device`
+  MODIFY `deviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -883,7 +967,7 @@ ALTER TABLE `temp_booking`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
@@ -902,6 +986,19 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `bus_booking`
   ADD CONSTRAINT `fk_busid1` FOREIGN KEY (`busID`) REFERENCES `special_bus` (`busID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `bus_live_location`
+--
+ALTER TABLE `bus_live_location`
+  ADD CONSTRAINT `fk_busid_liveloc` FOREIGN KEY (`busID`) REFERENCES `bus` (`busID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tripid_liveloc` FOREIGN KEY (`tripID`) REFERENCES `trip` (`tripID`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `iot_device`
+--
+ALTER TABLE `iot_device`
+  ADD CONSTRAINT `fk_busid_iotdevice` FOREIGN KEY (`busID`) REFERENCES `bus` (`busID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `route_stop`
